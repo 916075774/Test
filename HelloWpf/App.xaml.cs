@@ -13,5 +13,6 @@ namespace HelloWpf
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }
