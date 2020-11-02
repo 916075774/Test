@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:HelloWpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
-        
+
+        <Button Name="logBtn" Click="LogBtn_Click" Content="创建日志" Margin="205,300,531,94"/>
+
     </Grid>
 </Window>
