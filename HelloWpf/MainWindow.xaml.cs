@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,28 +24,35 @@ namespace HelloWpf
         public MainWindow()
         {
             InitializeComponent();
+
         }
-    }
 
-    private void LogBtnClick(object sender, RoutedEventArgs e)
-    {
-        string strLog = String.Format("[Thread ID:{0}]{1}", AppDomain.GetCurrentThreadId(), "Log4net写入日志配置处理");
-        WriteLog(strLog);
-    }
+        
 
-    private void WriteLog(string exp = null, string loggerName = "InfoLogger")
-    {
-        //新建的一个静态类
-        LogObject.Log(loggerName).Info(exp);
-        LogObject.Log(loggerName).Error(exp);
-    }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+             
+            Test test = new Test(txtName.Text);
 
-    public static class LogObject
-    {
+            test.ActionEvent += Message_ActionEvent;
+            //message.Activated += action(ReTry);
+            //message.SetText(txtName.Text);
+            test.ShowDialog();
+        }
 
-        public static ILog Log(string LoggerName)
-        {   //log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-            return LogManager.GetLogger(LoggerName);
+        private void Message_ActionEvent(string value)
+        {
+            textBox.Text = value;
+        }
+
+        public static void ReTry()
+        {
+
+            MessageBox.Show("成功");
         }
     }
 }
+
+
+
+

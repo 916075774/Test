@@ -4,12 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWpf"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" 
+        Title="MainWindow" Height="450" Width="800" Background="Salmon">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="550"/>
+        </Grid.ColumnDefinitions>
 
-        <Button Name="logBtn" Click="LogBtn_Click" Content="创建日志" Margin="205,300,531,94"/>
+        <TextBox Name="txtName" Grid.Row="0" Grid.Column="0" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0"></TextBox>
+        <TextBox Name="textBox" Grid.Row="0" Grid.Column="1" Width="200" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" TextWrapping="Wrap"  />
+        <Button Click="Button_Click" Content="button" Grid.Row="0" Grid.Column="1" Width="140" Height="35" Foreground="Blue"></Button>
 
     </Grid>
 </Window>
